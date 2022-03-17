@@ -22,11 +22,9 @@ dependencies {
 
 apply from: '../config/style.gradle'
 apply from: '../config/coverage.gradle'
-apply from: '../config/javadoc.gradle'
 
 artifacts {
     archives sourcesJar
-    archives javadocJar
 }
 
 publishing {
@@ -38,7 +36,6 @@ publishing {
 
             artifact("$buildDir/outputs/aar/${project.archivesBaseName}-release.aar")
             artifact sourcesJar
-            artifact javadocJar
 
             pom {
                 name = POM_NAME
